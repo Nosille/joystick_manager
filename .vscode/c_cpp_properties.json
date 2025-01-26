@@ -7,7 +7,7 @@
             },
             "includePath": [
                 "/opt/ros/melodic/include/**",
-                "/home/siegerobotics/j8_ws/src/common_teleop/include/**",
+                "/home/siegerobotics/j8_ws/src/joystick_manager/include/**",
                 "/home/siegerobotics/j8_ws/src/ctre_talonsrx/include/**",
                 "/home/siegerobotics/j8_ws/src/hps_lidar_driver/include/**",
                 "/usr/include/**"

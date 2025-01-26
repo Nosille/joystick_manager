@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>common_teleop</name>
+  <name>joystick_manager</name>
   <description>The package responsible for translating Joystick and Gamepad Joystick Presses.</description>
   <author email="kylerfarrar@gmail.com">Kyler Farrar</author>
   <maintainer email="kylerfarrar@gmail.com">Kyler Farrar</maintainer>

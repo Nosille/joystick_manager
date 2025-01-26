@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(common_teleop)
+cmake_minimum_required(VERSION 3.5)
+project(joystick_manager)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+#add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -109,7 +109,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES common_teleop
+#  LIBRARIES joystick_manager
   CATKIN_DEPENDS roscpp std_msgs message_generation message_runtime
 #  DEPENDS system_lib
 )
@@ -133,7 +133,7 @@ target_link_libraries(teleop_node ${catkin_LIBRARIES})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/common_teleop.cpp
+#   src/${PROJECT_NAME}/joystick_manager.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -143,7 +143,7 @@ target_link_libraries(teleop_node ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/common_teleop_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/joystick_manager_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -207,7 +207,7 @@ target_link_libraries(teleop_node ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_common_teleop.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_joystick_manager.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

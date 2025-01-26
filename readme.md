@@ -1,3 +1,3 @@
 
-# COMMON_TELEOP
+# joystick_manager
 The goal of this package is to leverage SDL2 and provide a common joystick interface that outputs all joystick values in an organized manner. The node should handle outputting a set of joystick messages that is 1:1 with the number of joysticks, gamepads, and other control interfaces attached to the host computer. THis is a basic interface and should only manipulate the joystick inputs in a minimal way, such as scaling the joystick max values to a -1 to 1 range. All other manipulations should occur in the robot_drivetrain package.

@@ -2,12 +2,12 @@
 #include "ros/ros.h"
 #include "ros/console.h"
 #include <SDL2/SDL.h>
-#include "common_teleop/JoystickState.h"
+#include "joystick_manager/JoystickState.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
-	ros::init(argc, argv, "common_teleop", ros::init_options::AnonymousName);
+	ros::init(argc, argv, "joystick_manager", ros::init_options::AnonymousName);
 	ros::NodeHandle ros_NodeHandle;
 
 	if(SDL_Init(SDL_INIT_JOYSTICK) < 0){
@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 	ROS_INFO("%d Joystick(s) were found.", numberJoysticks);
 
 	ros::Publisher joystickStatePublishers[numberJoysticks];
-	common_teleop::JoystickState joystickStates[numberJoysticks];
+	joystick_manager::JoystickState joystickStates[numberJoysticks];
 	SDL_Joystick* sdlJoysticks[numberJoysticks];
 
 	const char* joystickNames[numberJoysticks];
@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 		joystickStates[i].Axes.resize(joystickStates[i].joystickNumAxes);
 		joystickStates[i].Hats.resize(joystickStates[i].joystickNumHats);
 
-		joystickStatePublishers[i] = ros_NodeHandle.advertise<common_teleop::JoystickState>("/ControlDevices/Joystick" + to_string(i), 1);
+		joystickStatePublishers[i] = ros_NodeHandle.advertise<joystick_manager::JoystickState>("/ControlDevices/Joystick" + to_string(i), 1);
 	};
 
 	int i(0), j(0);
